@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AssignmentM.A._010
 {
-    public class Employee : IPayable
+    public abstract class Employee : IPayable
     {
         public string SSN { get; set; }
         public string FirstName { get; set; }
@@ -26,16 +26,15 @@ namespace AssignmentM.A._010
             LastName = lastName;
             SSN = ssn;
         }
-        
-        public void Display()
-        {
-            
-        }
-        public override string ToString()
-        {
-            return this.FirstName + "\n" + this.LastName + "\n" + this.Phone + "\n" + this.Email;
-        }
 
+        public abstract string getSSN();
+        public abstract void setSSN();
+        public abstract string getFirstName();
+        public abstract void setFirstName();
+        public abstract string getLastName();
+        public abstract void setLastName();
+
+        public abstract void Display();
         public double GetPaymentAmount()
         {
             throw new NotImplementedException();
